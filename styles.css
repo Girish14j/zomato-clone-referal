@@ -1,0 +1,555 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    /* this is the standard section which should be written */
+    font-family: "Poppins", sans-serif;
+}
+
+.hero__section{
+    background: url(images/heroSectionBackground.png);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    min-height: 60vh;
+}
+
+.navbar{
+    /* this is used place the positions for the anchors */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* justify content space between is used to have spaces between right and left anchors */
+    height: 65px;
+    padding: 16px 48px;
+}
+
+.navbar a{
+    /* this is used to give styles to anchor tags */
+    color: white;
+    text-decoration: none;
+}
+
+.navbar__menu_container{
+    display: flex;
+    gap: 18px;
+}
+
+.navbar__menu_container .user_icon{
+    display: flex;
+    height: 25px;
+    width: 25px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    border: solid 1px white;
+    /* the circle in user logo is been made using heght width and border radius */
+}
+
+@media only screen and (max-width: 600px){
+    .navbar__menu_container .user_icon{
+        display: flex;
+    }
+    .link{
+        display: none;
+    }
+    .hero__section{
+        min-height: 80vh;
+    }
+}
+
+.hero__section_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    height: calc(60px-65vh);
+}
+
+.hero__section_logo{
+    width: 200px;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero__section_title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.hero__section_input_container{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.input_container_location,.input_container_search{
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+
+.input_container_location{
+    width: 35%;
+} 
+
+.input_container_search{
+    width: 65%;
+}
+
+@media only screen and (max-width: 600px){
+    .navbar__menu_container .user_icon{
+        display: flex;
+    }
+    .link{
+        display: none;
+    }
+    .hero__section{
+        min-height: 80vh;
+    }
+    .hero__section_container{
+        flex-direction: column;
+        background-color: transparent;
+        width: 100%;
+    }
+    .input_container_location,.input_container_search{
+        padding: 18px;
+        border-radius: 10px;
+        width: 98%;
+    }
+    .hero__section_container{
+        height: calc(80vh-40px);
+    }
+    .hero__section_title{
+        font-size: 18px;
+        width: 95%;
+    }
+}
+
+/* out of media queries */
+
+.container{
+    margin: 3rem auto;
+    width: 90%;
+}
+
+.we__offer{
+    display: flex;
+    flex-wrap: wrap;
+    /* flex wrap is used because the screen size is shrinked the images get adjusted */
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.we__offer_card{
+    border-radius: 10px;
+    /* background-color: aqua; */
+    overflow: hidden;
+    /* overflow hidden is used as the color used should not go out of the box */
+    border: 1px solid #e0e0e0;
+    transition: all 1s ease-in-out;
+    margin-right: 12px;
+}
+
+.we__offer_card:hover{
+    transform: scale(1.1);
+    /* transform scale is used to zoom in and out an image */
+}
+
+.we__offer_card img{
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.we__offer_content{
+    padding: 10px; 
+    /* this is spacing  */
+}
+
+.we__offer_content h2{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.we__offer_content p{
+    font-size: 10px;
+}
+
+/* this is section: collection */
+.collections{
+    font-weight: 600;
+}
+
+.collections .sub__heading_container{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.sub__heading_container span :nth-child(2){
+    /* here nth child(2) is used to access 2nd child of the class */
+    color: rgb(168, 77, 77);
+    font-size: 13px;
+    cursor: pointer ;
+}
+
+.collection_card_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.collection_card_container .card{
+    height: 300px;
+    min-width: 240px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.card1{
+    background-image: url(./images/collection1.jpg);
+}
+
+.card2{
+    background-image: url(./images/collection2.jpg);
+}
+
+.card3{
+    background-image: url(./images/collection3.jpg);
+}
+
+.card4{
+    background-image: url(./images/collection4.jpg);
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background: linear-gradient(
+        0deg,
+        rgba(212, 120, 0, 0.9) 0%,
+        /* rgba => red green blue opacity */
+        /* where the range of opacity is from 0 to 1 */
+        rgba(0, 100, 12, 0.05) 50%,
+        rgba(120, 200, 150, 0.05) 85%,
+    );
+    z-index: 5;
+}
+
+.collection_card_container .card .content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    z-index: 6; 
+    /* 3D */
+}
+
+.content h4{
+    font-weight: 400;
+}
+
+.get__the_app{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(red, green, blue);
+    width: 100%;
+    padding: 3rem 6rem;
+}
+
+.get__the_app .semiContainer{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.get__the_app .semiContainer .left{
+    flex: 2;
+}
+
+.get__the_app .semiContainer .left img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.get__the_app .semiContainer .right{
+    flex: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.right h1{
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.right p{
+    font-size: 0.8rem;
+}
+
+.right .radio__button_container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.right .radio__button_container div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.right .radio__button_container div input{
+    height: 15px;
+    width: 15px;
+    accent-color: rgb(239,79,95);
+}
+
+.right .input_container{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.input_container button,
+.input_container input{
+    padding: 10px 12px;
+}
+
+.input_container input{
+    flex: auto;
+    border: 1.5px solid gray;
+    outline: none;
+    border-radius: 5px;
+}
+
+.input_container button{
+    border: none;
+    background-color: rgb(239, 79, 95);
+    color: white;
+    border-radius: 5px;
+    container: pointer;
+}
+
+.right .download__app_container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.right .download__app_container h5{
+    font-weight: 400;
+    color: grey;
+}
+
+.right .download__app_container div{
+    display: flex;
+    gap: 1rem;
+}
+
+.right .download__app_container div img{
+    width: 35%;
+}
+
+@media only screen and (max-width: 1300px){
+    .get__the_app .semiContainer .left,
+    .get__the_app .semiContainer .right{
+        flex: 1;
+    }
+
+    .get__the_app .semiContainer{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .get__the_app .semiContainer{
+        padding: 2rem 0;
+    }
+
+    .get__the_app .semiContainer{
+        width: 95%;
+        flex-direction: column;
+    }
+}    
+/* media queries are generally used when we shrink the size of the screen at that time all items should go in their respective positions */
+
+.explore__options{
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    gap: 2rem;
+    flex-direction: column;
+    width: 45%;
+}
+
+.options_near_me{
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    border: 1.5px solid grey;
+    border-radius: 0.5px;
+}
+
+.options_restaurant{
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    border: 1.5px solid grey;
+    border-radius: 0.5px;
+}
+
+.options_cities{
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    border: 1.5px solid grey;
+    border-radius: 0.5px;
+}
+
+.footer{
+    width: 100%;
+}
+
+.footer__section1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.footer__section1 img{
+    width: 130px;
+}
+
+.sectiona1__buttonContainer{
+    display: flex;
+    gap: 1rem;
+}
+
+.section1__buttonContainer button{
+    padding: 5px;
+    width: 90px;
+    border: 1px solid grey;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.navigation__container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 80%;
+    margin: auto;
+    gap: 1rem;
+    padding: 3rem 0;
+}
+
+.Link__container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;    
+}
+
+.Link__container h5{
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 5px;
+    letter-spacing: 0.8px;
+}
+
+.Footer__link{
+    text-decoration: none;
+    color: gray;
+    font-size: 12.5px;
+    font-weight: 300;
+}
+
+.Footer__link:hover{
+    /* hover is used when on a background color any text is written at that time text becomes light to make it darker */
+    color: black;
+}
+
+.section__links_container button{
+    background-color: black;
+    border-radius: 30px;
+    height: 25px;
+    width: 25px;
+    /* to make the logo in circle we used height width with same px and border radius */
+    color: white;
+    cursor: pointer;
+}
+
+.section__links_container button i{
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    /* align items is for x axis */
+    justify-content: center;
+    /* jsutify content is for y axis */
+}
+
+.footer__section_logos{
+    width: 100%;
+}
+
+.disclaimer{
+    color: gray;
+    font-size: 12.5px;
+    width: 95%;
+    margin: auto;
+    border-top: solid grey;
+    padding-top: 1.5rem;
+}
+
+@media only screen and (max-width: 900px){
+    .navigation__container{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .navigation__container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .navigation__container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
